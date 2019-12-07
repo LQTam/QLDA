@@ -99,7 +99,7 @@ class LapPhieuDV extends Component {
         {/* ============================================================== */}
         {/* Bread crumb and right sidebar toggle */}
         {/* ============================================================== */}
-        <div className="row page-titles">
+        <div className="row page-titles mt-2">
           <div className="col-md-5 align-self-center">
             <br />
             <h3 className="text-themecolor">Lập hóa đơn</h3>
@@ -123,8 +123,6 @@ class LapPhieuDV extends Component {
         <div className="tab_container">
           <div id="tab1" className="tab_content">
             <div id="form-lap-phieu">
-              <h2 style={{ textAlign: 'center', color: 'gray' }}>Phiếu dịch vụ</h2>
-              <br /><br />
               <form action="#" id="form-input-dich-vu">
                 Tên phòng:<br />
                 <select name="chonphong" onChange={(event) => this.IsChange(event)} >
@@ -132,9 +130,10 @@ class LapPhieuDV extends Component {
                   {this.ShowSelectOptionLapPhieuDV()}
                 </select>
                 Chọn dịch vụ:<br />
-                <div id="danh-sach-dich-vu" style={{ color: 'gray' }}>
-                  <TablePhieuDV dulieudachon={ketqua} />
-                </div>
+                {/* <div id="danh-sach-dich-vu" style={{ color: 'gray' }}>
+                </div> */}
+                
+                <TablePhieuDV dulieudachon={ketqua} />
               </form>
             </div>
           </div>{/* #tab1 */}

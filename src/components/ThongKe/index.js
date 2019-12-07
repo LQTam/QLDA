@@ -16,7 +16,7 @@ class ThongKe extends Component {
                 {/* Bread crumb and right sidebar toggle */}
                 {/* ============================================================== */}
                 <br />
-                <div className="row page-titles">
+                <div className="row page-titles mt-2">
                     <div className="col-md-5 align-self-center">
                         <h3 className="text-themecolor">Thống kê</h3>
                         <ol className="breadcrumb">

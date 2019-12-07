@@ -13,10 +13,32 @@ import Register from '../Register'
 import ThongKe from '../ThongKe'
 import Footer from '../Footer'
 import QLNhanVien from '../QLNhanVien'
-import { withAuthentication, withAuthorization, AuthUserContext } from '../Session';
-import { compose } from 'recompose';
-import { withFirebase } from '../Firebase';
+import { withAuthentication,  AuthUserContext } from '../Session';
+import Loadable from 'react-loadable';
+const ThuePhongLoadable = Loadable({
+    loader : () => import ('../ThuePhong'),
+    loading : ()=> (<h1>Loading...</h1>)
+});
 
+const DatPhongLoadable = Loadable({
+    loader : () => import ('../DatPhong'),
+    loading : ()=> (<h1>Loading...</h1>)
+});
+
+const LapPhieuLoadable = Loadable({
+    loader : () => import ('../LapPhieuDV'),
+    loading : ()=> (<h1>Loading...</h1>)
+});
+
+const QLNV = Loadable({
+    loader : () => import ('../QLNhanVien'),
+    loading : ()=> (<h1>Loading...</h1>)
+});
+
+const LoginLoadable = Loadable({
+    loader : () => import ('../Login'),
+    loading : ()=> (<h1>Loading...</h1>)
+});
 
 class App extends React.Component {
     constructor(props) {
@@ -29,26 +51,24 @@ class App extends React.Component {
                 <AuthUserContext.Consumer>
                     {authUser =>
                         authUser
-                            ? (<div>
+                            ? (<>
                                 <Header />
-                                <SideBar1 />
-                                <div className='page-wrapper'>
+                                {/* <SideBar1 /> */}
                                     <Route exact path={ROUTES.THONGKE} component={ThongKe} />
-                                    <Route path={ROUTES.THUE_PHONG} component={ThuePhong} />
-                                    <Route path={ROUTES.DAT_PHONG} component={DatPhong} />
-                                    <Route path={ROUTES.LAP_HOA_DON} component={LapPhieuDV} />
-                                    <Route path={ROUTES.QUANLY_NHANVIEN} component={QLNhanVien} />
-                                    <Route path={ROUTES.SIGN_IN} component={Login} />
+                                    <Route path={ROUTES.THUE_PHONG} component={ThuePhongLoadable} />
+                                    <Route path={ROUTES.DAT_PHONG} component={DatPhongLoadable} />
+                                    <Route path={ROUTES.LAP_HOA_DON} component={LapPhieuLoadable} />
+                                    <Route path={ROUTES.QUANLY_NHANVIEN} component={QLNV} />
+                                    <Route path={ROUTES.SIGN_IN} component={LoginLoadable} />
                                     <Route path={ROUTES.SIGN_UP} component={Register} />
                                     <Route path={ROUTES.SIGN_OUT} component={Logout} />
-                                </div>
                                 <Footer />
-                            </div>)
+                            </>)
                             : (
                                 <>
                                     <Header />
                                     <Redirect to='/sign-in' />
-                                    <Route path={ROUTES.SIGN_IN} component={Login} />
+                                    <Route path={ROUTES.SIGN_IN} component={LoginLoadable} />
                                     <Route path={ROUTES.SIGN_UP} component={Register} />
                                 </>
                             )
@@ -62,4 +82,4 @@ class App extends React.Component {
 const condition = authUser =>
     authUser;
 
-export default withAuthentication((App));
+export default withAuthentication(App);

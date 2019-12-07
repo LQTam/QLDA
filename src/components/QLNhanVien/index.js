@@ -88,7 +88,7 @@ class QLNhanVien extends Component {
         {/* ============================================================== */}
         {/* Bread crumb and right sidebar toggle */}
         {/* ============================================================== */}
-        <div className="row page-titles">
+        <div className="row page-titles mt-2">
           <div className="col-md-5 align-self-center">
             <br />
             <h3 className="text-themecolor">Quản lý nhân viên</h3>
@@ -98,19 +98,12 @@ class QLNhanVien extends Component {
             </ol>
           </div>
         </div>
-        {/* ============================================================== */}
-        {/* End Bread crumb and right sidebar toggle */}
-        {/* ============================================================== */}
-        {/* ============================================================== */}
-        {/* Start Page Content */}
-        {/* ============================================================== */}
         <div id="content-nhan-vien">
           <div id="menu-them-nhan-vien">
             <button className="btn btn-info" data-toggle="modal" data-target="#btnThemNV">Thêm nhân viên</button>
           </div>
           <div className="card-body-nhan-vien">
             <h4 className="card-title">Danh sách nhân viên</h4>
-            {/* <h6 class="card-subtitle">Add class <code>.table</code></h6> */}
             <div className="table-responsive">
               <table className="table">
                 <thead>
@@ -127,26 +120,13 @@ class QLNhanVien extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* <UserTableRow index = "1" id="NV01"
-                    username = "Thào A Vảng"
-                    dob="19/05/1998"
-                    gender="Nam"
-                    phone="0123268755"
-                    job="Lễ Tân"
-                    role="Nhân viên"
-                    /> */}
                   {this.showUsers(this.state.users)}
                 </tbody>
               </table>
             </div>
           </div>
-          {/* Model them nhan vien */}
-          {/* Satrt model */}
           <ModalThemMem />
-        </div> {/* #container */}
-        {/* ============================================================== */}
-        {/* End footer */}
-        {/* ============================================================== */}
+        </div>
       </div>
     )
   }

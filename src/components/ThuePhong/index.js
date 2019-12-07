@@ -39,7 +39,7 @@ class ThuePhong extends Component {
                 {/* ============================================================== */}
                 {/* Bread crumb and right sidebar toggle */}
                 {/* ============================================================== */}
-                <div className="row page-titles">
+                <div className="row page-titles mt-2">
                     <div className="col-md-5 align-self-center">
                         <br />
                         <h3 className="text-themecolor">Thuê phòng</h3>
