@@ -28,8 +28,7 @@ const UserTableRow =  props => {
     .update(info);
 
     success = "Sua thong tin thanh cong";
-
-      document.getElementById('closeModal').click();
+    alert(success);
   }
 
   const confirmDelete =async (uid)=>{
@@ -41,7 +40,7 @@ const UserTableRow =  props => {
     <>
       <tr>
         <td>{props.index + 1}</td>
-        <td>{props.uid}</td>
+        <td>{props.uid.slice(0,4)}</td>
         <td>{props.username}</td>
         <td>{props.dob}</td>
         <td>{props.gender}</td>
@@ -93,7 +92,7 @@ const UserTableRow =  props => {
 
                 <div className="modal-footer">
                   <button type="submit" className="btn btn-info">Sua nhân viên</button>
-                  <button type="button" className="btn btn-info" data-dismiss="modal" id='closeModal'>Hủy</button>
+                  <button type="button" className="btn btn-info" data-dismiss="modal" id='closeModalEdit'>Hủy</button>
                 </div>
               </form>
             </div>

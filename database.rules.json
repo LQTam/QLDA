@@ -1,0 +1,19 @@
+{
+  "rules": {
+    // ".read" : "auth != null",
+    ".read" : true,
+      // ".write":"root.child('users').child(auth.uid).child('isAdmin').val() == true",
+      ".write": true,
+    "users": {
+			"$uid": {
+				".read": "root.child('users').child(auth.uid).child('isAdmin').val() == true",
+			  ".write":"auth.token.email == 'laquyettam1@gmail.com' || root.child('users').child(auth.uid).child('isAdmin').val() == true",
+			},
+		}
+    //  "KhachHang": {
+    //   ".read": true,
+    //   // ".write":"auth.uid != null"
+    //     ".write":"root.child('NhanVien').child('role').val() == 0",
+    // },
+  }
+}

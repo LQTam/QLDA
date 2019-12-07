@@ -153,7 +153,7 @@ class Viewdata extends Component {
     render() {
 
         return (
-
+            <>
             <div id="ket-qua-trich-xuat">
                 {this.showconten()}
                 <div id="anh-cmnd">
@@ -173,6 +173,8 @@ class Viewdata extends Component {
                     </div>
                 </div>
             </div>
+            <div className='clearfix' style={{display:'table',content:'',clear:'both'}}></div>
+            </>
         );
     }
 }

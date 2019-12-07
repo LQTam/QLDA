@@ -84,7 +84,6 @@ class TablePhieuDV extends Component {
                 <input
                   type="checkbox"
                   name="checkbox"
-                  className="form-check-input"
                   onChange={event => this.IsChange(event)}
                   value={value.id}
                 />

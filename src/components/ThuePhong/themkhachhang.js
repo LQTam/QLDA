@@ -69,8 +69,7 @@ class themkhachhang extends Component {
 
     render() {
         return (
-            <div>
-                <div id="tab3" className="tab_content">
+            <div id="tab3" className="tab_content">
                     <div id="khung-them-khach-hang">
                         <div className="container">
                             {/* Modal */}
@@ -106,7 +105,7 @@ class themkhachhang extends Component {
 
                     </table>
                 </div>
-            </div>
+            
         );
     }
 }

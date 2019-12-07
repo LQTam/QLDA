@@ -62,7 +62,7 @@ class ThuePhong extends Component {
                         <li rel="tab3" className="dropbtn"> Thêm khách hàng</li>
                     </ul>
                 </div>
-                <div className="tab_container">
+                <div className="tab_container pt-5">
                     <Thuephongtructiep />
                     <Thuephongdattruoc />
                     <Themkhachhang />
